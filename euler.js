@@ -34,7 +34,7 @@ var e2 = function(){
   return sum;//4613732
 }
 
-/* 3 Largest prime factor
+/** 3 Largest prime factor
 * The prime factors of 13195 are 5, 7, 13 and 29.
 * What is the largest prime factor of the number 600851475143 ?
 */
@@ -50,7 +50,7 @@ var e3 = function () {
 	return n;//6857 (600851475143 = 71 x 839 x 1471 x 6857)
 }
 
-/* 4 Largest palindrome product
+/** 4 Largest palindrome product
 * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91  99.
 * Find the largest palindrome made from the product of two 3-digit numbers.
 */
@@ -60,6 +60,7 @@ var e4 = function () {
 		return (str === reverseStr) ? true : false; 
 	};
     var curr = 0, result = 0;
+    //brute force approach... will came up with better solution later
 	for(var i = 999; i >= 100; i-=1){
 		for(var j = 999; j >= 100; j-=1){
 			curr = i*j;	
@@ -69,6 +70,45 @@ var e4 = function () {
 		}
 	}
 	return result;
+}
+
+/** 5 
+* 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+* What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+* 
+* This one better solved without program, by multiplying common factors:
+* 20 = 2^2 * 5
+* 19 = 19
+* 18 = 2 * 3^2
+* 17 = 17
+* 16 = 2^4
+* 15 = 3 * 5
+* 14 = 2 * 7
+* 13 = 13
+* 11 = 11
+* 
+* 2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19 = 232792560
+*
+* but here is some crappy program anyways
+*/
+var e5 = function () {
+	var r = 20, isFound = false;
+	while(!isFound){
+		r+=1;
+		if((r % 20 === 0) && 
+			(r % 19 === 0) && 
+			(r % 18 === 0) && 
+			(r % 17 === 0) && 
+			(r % 16 === 0) && 
+			(r % 15 === 0) && 
+			(r % 14 === 0) && 
+			(r % 13 === 0) && 
+			(r % 12 === 0) && 
+			(r % 11 === 0)){
+			isFound = true;
+		}
+	}
+	return r;//232792560
 }
 
 })
