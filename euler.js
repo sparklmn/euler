@@ -72,7 +72,7 @@ var e4 = function () {
 	return result;
 }
 
-/** 5 
+/** 5 Smallest multiple
 * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 * 
@@ -111,4 +111,26 @@ var e5 = function () {
 	return r;//232792560
 }
 
+/** 6 Sum square difference
+* Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+*/
+var e6 = function () {
+	var sum1 = 0, sum2 = 0;
+	for (var i = 1; i < 101; i+=1) {
+		sum1 += i*i;
+		sum2 += i;
+	}
+	return sum2*sum2 - sum1;//25164150
+}
+
+/** 7 10001st prime
+* By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+* What is the 10 001st prime number?
+*/
+var e7 = function () {
+
+}
+
 })
+
+
